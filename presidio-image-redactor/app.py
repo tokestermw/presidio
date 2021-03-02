@@ -51,7 +51,7 @@ class Server:
                     schema:
                       type: string
             """
-            return "Presidio Image Redactor service is up"
+            return "Presidio Image Redactor service is up\n"
 
         @self.app.route("/redact", methods=["POST"])
         def redact():
