@@ -33,9 +33,9 @@ namespace IO.Swagger.Model
         /// Initializes a new instance of the <see cref="DeanonymizeRequest" /> class.
         /// </summary>
         /// <param name="text">The anonymized text (required).</param>
-        /// <param name="deanonymizers">Object where the key is DEFAULT or the ENTITY_TYPE and the value is decrypt since it is the only one supported (required) (default to {&quot;DEFAULT&quot;:{&quot;type&quot;:&quot;decrypt&quot;,&quot;key&quot;:&quot;3t6w9z$C&amp;F)J@NcR&quot;}}).</param>
+        /// <param name="deanonymizers">Object where the key is DEFAULT or the ENTITY_TYPE and the value is decrypt since it is the only one supported (required).</param>
         /// <param name="anonymizerResults">Array of anonymized PIIs (required).</param>
-        public DeanonymizeRequest(string text = default(string), AnyOfDeanonymizeRequestDeanonymizers deanonymizers = {"DEFAULT":{"type":"decrypt","key":"3t6w9z$C&F)J@NcR"}}, List<AnonymizerResult> anonymizerResults = default(List<AnonymizerResult>))
+        public DeanonymizeRequest(string text = default(string), Object deanonymizers = default(Object), List<AnonymizerResult> anonymizerResults = default(List<AnonymizerResult>))
         {
             // to ensure "text" is required (not null)
             if (text == null)
@@ -78,7 +78,7 @@ namespace IO.Swagger.Model
         /// </summary>
         /// <value>Object where the key is DEFAULT or the ENTITY_TYPE and the value is decrypt since it is the only one supported</value>
         [DataMember(Name="deanonymizers", EmitDefaultValue=false)]
-        public AnyOfDeanonymizeRequestDeanonymizers Deanonymizers { get; set; }
+        public Object Deanonymizers { get; set; }
 
         /// <summary>
         /// Array of anonymized PIIs

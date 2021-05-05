@@ -64,27 +64,6 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
         ApiResponse<List<string>> AnonymizersGetWithHttpInfo ();
         /// <summary>
-        /// Deanonymize Text
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <returns>DeanonymizeResponse</returns>
-        DeanonymizeResponse DeanonymizePost (DeanonymizeRequest body);
-
-        /// <summary>
-        /// Deanonymize Text
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <returns>ApiResponse of DeanonymizeResponse</returns>
-        ApiResponse<DeanonymizeResponse> DeanonymizePostWithHttpInfo (DeanonymizeRequest body);
-        /// <summary>
         /// Get supported deanonymizers
         /// </summary>
         /// <remarks>
@@ -164,27 +143,6 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<string>>> AnonymizersGetAsyncWithHttpInfo ();
-        /// <summary>
-        /// Deanonymize Text
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <returns>Task of DeanonymizeResponse</returns>
-        System.Threading.Tasks.Task<DeanonymizeResponse> DeanonymizePostAsync (DeanonymizeRequest body);
-
-        /// <summary>
-        /// Deanonymize Text
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <returns>Task of ApiResponse (DeanonymizeResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DeanonymizeResponse>> DeanonymizePostAsyncWithHttpInfo (DeanonymizeRequest body);
         /// <summary>
         /// Get supported deanonymizers
         /// </summary>
@@ -598,153 +556,6 @@ namespace IO.Swagger.Api
             return new ApiResponse<List<string>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
                 (List<string>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<string>)));
-        }
-
-        /// <summary>
-        /// Deanonymize Text 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <returns>DeanonymizeResponse</returns>
-        public DeanonymizeResponse DeanonymizePost (DeanonymizeRequest body)
-        {
-             ApiResponse<DeanonymizeResponse> localVarResponse = DeanonymizePostWithHttpInfo(body);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Deanonymize Text 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <returns>ApiResponse of DeanonymizeResponse</returns>
-        public ApiResponse< DeanonymizeResponse > DeanonymizePostWithHttpInfo (DeanonymizeRequest body)
-        {
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling AnonymizerApi->DeanonymizePost");
-
-            var localVarPath = "/deanonymize";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (body != null && body.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = body; // byte array
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeanonymizePost", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<DeanonymizeResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (DeanonymizeResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeanonymizeResponse)));
-        }
-
-        /// <summary>
-        /// Deanonymize Text 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <returns>Task of DeanonymizeResponse</returns>
-        public async System.Threading.Tasks.Task<DeanonymizeResponse> DeanonymizePostAsync (DeanonymizeRequest body)
-        {
-             ApiResponse<DeanonymizeResponse> localVarResponse = await DeanonymizePostAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Deanonymize Text 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"></param>
-        /// <returns>Task of ApiResponse (DeanonymizeResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<DeanonymizeResponse>> DeanonymizePostAsyncWithHttpInfo (DeanonymizeRequest body)
-        {
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling AnonymizerApi->DeanonymizePost");
-
-            var localVarPath = "/deanonymize";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (body != null && body.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = body; // byte array
-            }
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeanonymizePost", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<DeanonymizeResponse>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => string.Join(",", x.Value)),
-                (DeanonymizeResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DeanonymizeResponse)));
         }
 
         /// <summary>

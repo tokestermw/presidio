@@ -101,9 +101,9 @@ Class | Method | HTTP request | Description
 *AnalyzerApi* | [**SupportedentitiesGet**](docs/AnalyzerApi.md#supportedentitiesget) | **GET** /supportedentities | Get supported entities
 *AnonymizerApi* | [**AnonymizePost**](docs/AnonymizerApi.md#anonymizepost) | **POST** /anonymize | Anonymize Text
 *AnonymizerApi* | [**AnonymizersGet**](docs/AnonymizerApi.md#anonymizersget) | **GET** /anonymizers | Get supported anonymizers
-*AnonymizerApi* | [**DeanonymizePost**](docs/AnonymizerApi.md#deanonymizepost) | **POST** /deanonymize | Deanonymize Text
 *AnonymizerApi* | [**DeanonymizersGet**](docs/AnonymizerApi.md#deanonymizersget) | **GET** /deanonymizers | Get supported deanonymizers
 *AnonymizerApi* | [**HealthGet**](docs/AnonymizerApi.md#healthget) | **GET** /health | Healthcheck
+*DeanonymizerApi* | [**DeanonymizePost**](docs/DeanonymizerApi.md#deanonymizepost) | **POST** /deanonymize | Deanonymize Text
 
 <a name="documentation-for-models"></a>
 ## Documentation for Models
@@ -113,8 +113,6 @@ Class | Method | HTTP request | Description
  - [Model.AnonymizeRequest](docs/AnonymizeRequest.md)
  - [Model.AnonymizeResponse](docs/AnonymizeResponse.md)
  - [Model.AnonymizerResult](docs/AnonymizerResult.md)
- - [Model.AnyOfAnonymizeRequestAnonymizers](docs/AnyOfAnonymizeRequestAnonymizers.md)
- - [Model.AnyOfDeanonymizeRequestDeanonymizers](docs/AnyOfDeanonymizeRequestDeanonymizers.md)
  - [Model.DeanonymizeRequest](docs/DeanonymizeRequest.md)
  - [Model.DeanonymizeResponse](docs/DeanonymizeResponse.md)
  - [Model.Decrypt](docs/Decrypt.md)

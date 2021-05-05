@@ -217,6 +217,7 @@ namespace IO.Swagger.Api
         public AnalyzerApi()
         {
             this.Configuration = IO.Swagger.Client.Configuration.Default;
+            
 
             ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
         }

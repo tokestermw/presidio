@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AnonymizePost**](AnonymizerApi.md#anonymizepost) | **POST** /anonymize | Anonymize Text
 [**AnonymizersGet**](AnonymizerApi.md#anonymizersget) | **GET** /anonymizers | Get supported anonymizers
-[**DeanonymizePost**](AnonymizerApi.md#deanonymizepost) | **POST** /deanonymize | Deanonymize Text
 [**DeanonymizersGet**](AnonymizerApi.md#deanonymizersget) | **GET** /deanonymizers | Get supported deanonymizers
 [**HealthGet**](AnonymizerApi.md#healthget) | **GET** /health | Healthcheck
 
@@ -119,64 +118,6 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-<a name="deanonymizepost"></a>
-# **DeanonymizePost**
-> DeanonymizeResponse DeanonymizePost (DeanonymizeRequest body)
-
-Deanonymize Text
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
-
-namespace Example
-{
-    public class DeanonymizePostExample
-    {
-        public void main()
-        {
-            var apiInstance = new AnonymizerApi();
-            var body = new DeanonymizeRequest(); // DeanonymizeRequest | 
-
-            try
-            {
-                // Deanonymize Text
-                DeanonymizeResponse result = apiInstance.DeanonymizePost(body);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling AnonymizerApi.DeanonymizePost: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**DeanonymizeRequest**](DeanonymizeRequest.md)|  | 
-
-### Return type
-
-[**DeanonymizeResponse**](DeanonymizeResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

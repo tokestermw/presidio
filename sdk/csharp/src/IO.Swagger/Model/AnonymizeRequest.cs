@@ -33,9 +33,9 @@ namespace IO.Swagger.Model
         /// Initializes a new instance of the <see cref="AnonymizeRequest" /> class.
         /// </summary>
         /// <param name="text">The text to anonymize (required).</param>
-        /// <param name="anonymizers">Object where the key is DEFAULT or the ENTITY_TYPE and the value is the anonymizer definition (default to {&quot;DEFAULT&quot;:{&quot;type&quot;:&quot;replace&quot;,&quot;new_value&quot;:&quot;&lt;ENTITY_TYPE&gt;&quot;}}).</param>
+        /// <param name="anonymizers">Object where the key is DEFAULT or the ENTITY_TYPE and the value is the anonymizer definition.</param>
         /// <param name="analyzerResults">Array of analyzer detections (required).</param>
-        public AnonymizeRequest(string text = default(string), AnyOfAnonymizeRequestAnonymizers anonymizers = {"DEFAULT":{"type":"replace","new_value":"<ENTITY_TYPE>"}}, List<RecognizerResult> analyzerResults = default(List<RecognizerResult>))
+        public AnonymizeRequest(string text = default(string), Object anonymizers = default(Object), List<RecognizerResult> analyzerResults = default(List<RecognizerResult>))
         {
             // to ensure "text" is required (not null)
             if (text == null)
@@ -55,15 +55,7 @@ namespace IO.Swagger.Model
             {
                 this.AnalyzerResults = analyzerResults;
             }
-            // use default value if no "anonymizers" provided
-            if (anonymizers == null)
-            {
-                this.Anonymizers = {"DEFAULT":{"type":"replace","new_value":"<ENTITY_TYPE>"}};
-            }
-            else
-            {
-                this.Anonymizers = anonymizers;
-            }
+            this.Anonymizers = anonymizers;
         }
         
         /// <summary>
@@ -78,7 +70,7 @@ namespace IO.Swagger.Model
         /// </summary>
         /// <value>Object where the key is DEFAULT or the ENTITY_TYPE and the value is the anonymizer definition</value>
         [DataMember(Name="anonymizers", EmitDefaultValue=false)]
-        public AnyOfAnonymizeRequestAnonymizers Anonymizers { get; set; }
+        public Object Anonymizers { get; set; }
 
         /// <summary>
         /// Array of analyzer detections
