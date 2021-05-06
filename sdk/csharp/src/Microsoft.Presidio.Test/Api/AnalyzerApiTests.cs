@@ -68,11 +68,15 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void AnalyzePostTest()
         {
-            AnalyzeRequest body = new AnalyzeRequest(text: "My name is Inigo Montoya, you killed my father, prepare to die.", language: "en");
+            AnalyzeRequest body =
+                new AnalyzeRequest(text: "My name is Inigo Montoya, you killed my father, prepare to die.",
+                    language: "en");
             var response = instance.AnalyzePost(body);
             Assert.IsTrue(response.Count.Equals(1));
-            Assert.IsInstanceOf<List<RecognizerResultWithAnaysisExplanation>> (response, "response is List<RecognizerResultWithAnaysisExplanation>");
+            Assert.IsInstanceOf<List<RecognizerResultWithAnaysisExplanation>>(response,
+                "response is List<RecognizerResultWithAnaysisExplanation>");
         }
+
         /// <summary>
         /// Test HealthGet
         /// </summary>
@@ -80,8 +84,9 @@ namespace Microsoft.Presidio.Test
         public void HealthGetTest()
         {
             var response = instance.HealthGet();
-            Assert.IsInstanceOf<string> (response, "response is string");
+            Assert.IsInstanceOf<string>(response, "response is string");
         }
+
         /// <summary>
         /// Test RecognizersGet
         /// </summary>
@@ -90,8 +95,9 @@ namespace Microsoft.Presidio.Test
         {
             string language = "en";
             var response = instance.RecognizersGet(language);
-            Assert.IsInstanceOf<List<string>> (response, "response is List<string>");
+            Assert.IsInstanceOf<List<string>>(response, "response is List<string>");
         }
+
         /// <summary>
         /// Test SupportedentitiesGet
         /// </summary>
@@ -100,6 +106,7 @@ namespace Microsoft.Presidio.Test
         {
             string language = null;
             var response = instance.SupportedentitiesGet(language);
-            Assert.IsInstanceOf<List<string>> (response, "response is List<string>");
+            Assert.IsInstanceOf<List<string>>(response, "response is List<string>");
         }
     }
+}

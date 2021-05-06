@@ -30,9 +30,9 @@ namespace Microsoft.Presidio.Test
     /// Please update the test case below to test the API endpoint.
     /// </remarks>
     [TestFixture]
-    public class DeanonymizerApiTests
+    public class DeanonymizeApiTests
     {
-        private DeanonymizerApi instance;
+        private DeanonymizeApi instance;
 
         /// <summary>
         /// Setup before each unit test
@@ -40,7 +40,7 @@ namespace Microsoft.Presidio.Test
         [SetUp]
         public void Init()
         {
-            instance = new DeanonymizerApi();
+            instance = new DeanonymizeApi();
             instance.Configuration.BasePath = "http://127.0.0.1:3000";
         }
 
@@ -58,7 +58,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void InstanceTest()
         {
-            Assert.IsInstanceOfType(typeof(DeanonymizerApi), instance, "instance is a DeanonymizerApi");
+            Assert.IsInstanceOfType(typeof(DeanonymizeApi), instance, "instance is a DeanonymizerApi");
         }
 
         /// <summary>
