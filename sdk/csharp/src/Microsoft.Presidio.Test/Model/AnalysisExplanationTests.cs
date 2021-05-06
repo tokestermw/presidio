@@ -33,7 +33,7 @@ namespace Microsoft.Presidio.Test
     public class AnalysisExplanationTests
     {
         // TODO uncomment below to declare an instance variable for AnalysisExplanation
-        //private AnalysisExplanation instance;
+        private AnalysisExplanation instance;
 
         /// <summary>
         /// Setup before each test
@@ -42,7 +42,9 @@ namespace Microsoft.Presidio.Test
         public void Init()
         {
             // TODO uncomment below to create an instance of AnalysisExplanation
-            //instance = new AnalysisExplanation();
+            instance = new AnalysisExplanation(recognizer:"recognizer", patternName:"patternName", pattern: "pattern",
+                originalScore:0.5, score:0.4, textualExplanation: "explanation", scoreContextImprovement:0.2, supportiveContextWord:"word",
+                validationResult:0.1);
         }
 
         /// <summary>
@@ -61,7 +63,7 @@ namespace Microsoft.Presidio.Test
         public void AnalysisExplanationInstanceTest()
         {
             // TODO uncomment below to test "IsInstanceOfType" AnalysisExplanation
-            //Assert.IsInstanceOfType<AnalysisExplanation> (instance, "variable 'instance' is a AnalysisExplanation");
+            Assert.IsInstanceOfType(typeof(AnalysisExplanation), instance, "variable 'instance' is a AnalysisExplanation");
         }
 
 
@@ -71,7 +73,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void RecognizerTest()
         {
-            // TODO unit test for the property 'Recognizer'
+            Assert.IsTrue(instance.Recognizer == "recognizer");
         }
         /// <summary>
         /// Test the property 'PatternName'
@@ -79,7 +81,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void PatternNameTest()
         {
-            // TODO unit test for the property 'PatternName'
+            Assert.IsTrue(instance.PatternName == "patternName");
         }
         /// <summary>
         /// Test the property 'Pattern'
@@ -87,7 +89,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void PatternTest()
         {
-            // TODO unit test for the property 'Pattern'
+            Assert.IsTrue(instance.Pattern == "pattern");
         }
         /// <summary>
         /// Test the property 'OriginalScore'
@@ -95,7 +97,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void OriginalScoreTest()
         {
-            // TODO unit test for the property 'OriginalScore'
+            Assert.IsTrue(instance.OriginalScore == 0.5);
         }
         /// <summary>
         /// Test the property 'Score'
@@ -103,6 +105,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void ScoreTest()
         {
+            Assert.IsTrue(instance.Score == 0.4);
             // TODO unit test for the property 'Score'
         }
         /// <summary>
@@ -111,7 +114,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void TextualExplanationTest()
         {
-            // TODO unit test for the property 'TextualExplanation'
+            Assert.IsTrue(instance.TextualExplanation == "explanation");
         }
         /// <summary>
         /// Test the property 'ScoreContextImprovement'
@@ -119,7 +122,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void ScoreContextImprovementTest()
         {
-            // TODO unit test for the property 'ScoreContextImprovement'
+            Assert.IsTrue(instance.ScoreContextImprovement == 0.2);
         }
         /// <summary>
         /// Test the property 'SupportiveContextWord'
@@ -127,7 +130,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void SupportiveContextWordTest()
         {
-            // TODO unit test for the property 'SupportiveContextWord'
+            Assert.IsTrue(instance.SupportiveContextWord == "word");
         }
         /// <summary>
         /// Test the property 'ValidationResult'
@@ -135,7 +138,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void ValidationResultTest()
         {
-            // TODO unit test for the property 'ValidationResult'
+            Assert.IsTrue(instance.ValidationResult == 0.1);
         }
 
     }
