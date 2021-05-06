@@ -9,7 +9,6 @@
  */
 
 using NUnit.Framework;
-
 using System;
 using System.Linq;
 using System.IO;
@@ -32,8 +31,9 @@ namespace Microsoft.Presidio.Test
     [TestFixture]
     public class AnonymizeRequestTests
     {
-        // TODO uncomment below to declare an instance variable for AnonymizeRequest
-        //private AnonymizeRequest instance;
+        private AnonymizeRequest instance;
+        private List<RecognizerResult> results;
+        private Dictionary<string, object> anonymizers;
 
         /// <summary>
         /// Setup before each test
@@ -41,8 +41,11 @@ namespace Microsoft.Presidio.Test
         [SetUp]
         public void Init()
         {
-            // TODO uncomment below to create an instance of AnonymizeRequest
-            //instance = new AnonymizeRequest();
+            var encrypt = new Replace("replace", "val");
+            anonymizers = new Dictionary<string, object>() {{"PERSON", encrypt}};
+            var result = new RecognizerResult(start: 11, end: 24, score: 0.9, entityType: "PERSON");
+            results = new List<RecognizerResult>() {result};
+            instance = new AnonymizeRequest(text: "hello world", anonymizers: anonymizers, analyzerResults: results);
         }
 
         /// <summary>
@@ -51,7 +54,6 @@ namespace Microsoft.Presidio.Test
         [TearDown]
         public void Cleanup()
         {
-
         }
 
         /// <summary>
@@ -60,8 +62,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void AnonymizeRequestInstanceTest()
         {
-            // TODO uncomment below to test "IsInstanceOfType" AnonymizeRequest
-            //Assert.IsInstanceOfType<AnonymizeRequest> (instance, "variable 'instance' is a AnonymizeRequest");
+            Assert.IsInstanceOfType(typeof(AnonymizeRequest), instance, "variable 'instance' is a AnonymizeRequest");
         }
 
 
@@ -71,25 +72,25 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void TextTest()
         {
-            // TODO unit test for the property 'Text'
+            Assert.IsTrue(instance.Text == "hello world");
         }
+
         /// <summary>
         /// Test the property 'Anonymizers'
         /// </summary>
         [Test]
         public void AnonymizersTest()
         {
-            // TODO unit test for the property 'Anonymizers'
+            Assert.IsTrue(instance.Anonymizers == anonymizers);
         }
+
         /// <summary>
         /// Test the property 'AnalyzerResults'
         /// </summary>
         [Test]
         public void AnalyzerResultsTest()
         {
-            // TODO unit test for the property 'AnalyzerResults'
+            Assert.IsTrue(instance.AnalyzerResults == results);
         }
-
     }
-
 }

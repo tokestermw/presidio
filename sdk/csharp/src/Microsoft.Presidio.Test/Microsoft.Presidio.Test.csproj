@@ -81,7 +81,7 @@ Contact: presidio@microsoft.com
   <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
       <ProjectReference Include="..\Microsoft.Presidio\Microsoft.Presidio.csproj">
-          <Project>{A58EBA02-C01E-4673-B190-4F72B3344AC1}</Project>
+          <Project>{8A2739A1-915C-4E3E-97A1-D33EA1AE15FF}</Project>
           <Name>Microsoft.Presidio</Name>
       </ProjectReference>
   </ItemGroup>

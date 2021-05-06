@@ -9,7 +9,6 @@
  */
 
 using NUnit.Framework;
-
 using System;
 using System.Linq;
 using System.IO;
@@ -32,8 +31,8 @@ namespace Microsoft.Presidio.Test
     [TestFixture]
     public class DeanonymizeResponseTests
     {
-        // TODO uncomment below to declare an instance variable for DeanonymizeResponse
-        //private DeanonymizeResponse instance;
+        private DeanonymizeResponse instance;
+        private List<OperatorEntity> entities;
 
         /// <summary>
         /// Setup before each test
@@ -41,8 +40,10 @@ namespace Microsoft.Presidio.Test
         [SetUp]
         public void Init()
         {
-            // TODO uncomment below to create an instance of DeanonymizeResponse
-            //instance = new DeanonymizeResponse();
+            var operatorEntity = new OperatorEntity(_operator: "hash", entityType: "PERSON", start: 10, end: 12,
+                text: "hello");
+            entities = new List<OperatorEntity>() {operatorEntity};
+            instance = new DeanonymizeResponse(text: "hello world", entities);
         }
 
         /// <summary>
@@ -51,7 +52,6 @@ namespace Microsoft.Presidio.Test
         [TearDown]
         public void Cleanup()
         {
-
         }
 
         /// <summary>
@@ -73,6 +73,7 @@ namespace Microsoft.Presidio.Test
         {
             // TODO unit test for the property 'Text'
         }
+
         /// <summary>
         /// Test the property 'Items'
         /// </summary>
@@ -81,7 +82,5 @@ namespace Microsoft.Presidio.Test
         {
             // TODO unit test for the property 'Items'
         }
-
     }
-
 }

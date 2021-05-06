@@ -32,8 +32,7 @@ namespace Microsoft.Presidio.Test
     [TestFixture]
     public class AnonymizerResultTests
     {
-        // TODO uncomment below to declare an instance variable for AnonymizerResult
-        //private AnonymizerResult instance;
+        private AnonymizerResult instance;
 
         /// <summary>
         /// Setup before each test
@@ -41,8 +40,7 @@ namespace Microsoft.Presidio.Test
         [SetUp]
         public void Init()
         {
-            // TODO uncomment below to create an instance of AnonymizerResult
-            //instance = new AnonymizerResult();
+            instance = new AnonymizerResult(start: 10, end: 100, entityType: "PERSON");
         }
 
         /// <summary>
@@ -60,8 +58,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void AnonymizerResultInstanceTest()
         {
-            // TODO uncomment below to test "IsInstanceOfType" AnonymizerResult
-            //Assert.IsInstanceOfType<AnonymizerResult> (instance, "variable 'instance' is a AnonymizerResult");
+            Assert.IsInstanceOfType(typeof(AnonymizerResult), instance, "variable 'instance' is a AnonymizerResult");
         }
 
 
@@ -71,7 +68,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void StartTest()
         {
-            // TODO unit test for the property 'Start'
+            Assert.IsTrue(instance.Start == 10);
         }
         /// <summary>
         /// Test the property 'End'
@@ -79,7 +76,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void EndTest()
         {
-            // TODO unit test for the property 'End'
+            Assert.IsTrue(instance.End == 100);
         }
         /// <summary>
         /// Test the property 'EntityType'
@@ -87,7 +84,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void EntityTypeTest()
         {
-            // TODO unit test for the property 'EntityType'
+            Assert.IsTrue(instance.EntityType == "PERSON");
         }
 
     }

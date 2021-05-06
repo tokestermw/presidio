@@ -32,17 +32,20 @@ namespace Microsoft.Presidio.Test
     [TestFixture]
     public class DeanonymizeRequestTests
     {
-        // TODO uncomment below to declare an instance variable for DeanonymizeRequest
-        //private DeanonymizeRequest instance;
-
+        private DeanonymizeRequest instance;
+        private Dictionary<string, object> deanonymizers;
+        private List<AnonymizerResult> results;
         /// <summary>
         /// Setup before each test
         /// </summary>
         [SetUp]
         public void Init()
         {
-            // TODO uncomment below to create an instance of DeanonymizeRequest
-            //instance = new DeanonymizeRequest();
+            var decrypt = new Decrypt("decrypt", "3t6w9z$C&F)J@NcR");
+            deanonymizers = new Dictionary<string, object>() {{"PERSON", decrypt}};
+            var anonymizerResult = new AnonymizerResult(start: 11, end: 55, entityType: "PERSON");
+            results = new List<AnonymizerResult>() {anonymizerResult};
+            instance = new DeanonymizeRequest(text: "hello world", deanonymizers: deanonymizers, anonymizerResults: results);
         }
 
         /// <summary>
@@ -60,8 +63,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void DeanonymizeRequestInstanceTest()
         {
-            // TODO uncomment below to test "IsInstanceOfType" DeanonymizeRequest
-            //Assert.IsInstanceOfType<DeanonymizeRequest> (instance, "variable 'instance' is a DeanonymizeRequest");
+            Assert.IsInstanceOfType(typeof(DeanonymizeRequest),instance, "variable 'instance' is a DeanonymizeRequest");
         }
 
 
@@ -71,7 +73,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void TextTest()
         {
-            // TODO unit test for the property 'Text'
+            Assert.IsTrue(instance.Text == "hello world");
         }
         /// <summary>
         /// Test the property 'Deanonymizers'
@@ -79,7 +81,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void DeanonymizersTest()
         {
-            // TODO unit test for the property 'Deanonymizers'
+            Assert.IsTrue(instance.Deanonymizers == deanonymizers);
         }
         /// <summary>
         /// Test the property 'AnonymizerResults'
@@ -87,7 +89,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void AnonymizerResultsTest()
         {
-            // TODO unit test for the property 'AnonymizerResults'
+            Assert.IsTrue(instance.AnonymizerResults == results);
         }
 
     }

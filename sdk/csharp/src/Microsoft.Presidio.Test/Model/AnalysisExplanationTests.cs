@@ -32,7 +32,6 @@ namespace Microsoft.Presidio.Test
     [TestFixture]
     public class AnalysisExplanationTests
     {
-        // TODO uncomment below to declare an instance variable for AnalysisExplanation
         private AnalysisExplanation instance;
 
         /// <summary>
@@ -41,7 +40,6 @@ namespace Microsoft.Presidio.Test
         [SetUp]
         public void Init()
         {
-            // TODO uncomment below to create an instance of AnalysisExplanation
             instance = new AnalysisExplanation(recognizer:"recognizer", patternName:"patternName", pattern: "pattern",
                 originalScore:0.5, score:0.4, textualExplanation: "explanation", scoreContextImprovement:0.2, supportiveContextWord:"word",
                 validationResult:0.1);
@@ -62,7 +60,6 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void AnalysisExplanationInstanceTest()
         {
-            // TODO uncomment below to test "IsInstanceOfType" AnalysisExplanation
             Assert.IsInstanceOfType(typeof(AnalysisExplanation), instance, "variable 'instance' is a AnalysisExplanation");
         }
 
@@ -106,7 +103,6 @@ namespace Microsoft.Presidio.Test
         public void ScoreTest()
         {
             Assert.IsTrue(instance.Score == 0.4);
-            // TODO unit test for the property 'Score'
         }
         /// <summary>
         /// Test the property 'TextualExplanation'

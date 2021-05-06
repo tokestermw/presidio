@@ -32,8 +32,7 @@ namespace Microsoft.Presidio.Test
     [TestFixture]
     public class AnalyzeRequestTests
     {
-        // TODO uncomment below to declare an instance variable for AnalyzeRequest
-        //private AnalyzeRequest instance;
+        private AnalyzeRequest instance;
 
         /// <summary>
         /// Setup before each test
@@ -41,8 +40,8 @@ namespace Microsoft.Presidio.Test
         [SetUp]
         public void Init()
         {
-            // TODO uncomment below to create an instance of AnalyzeRequest
-            //instance = new AnalyzeRequest();
+            var entities = new List<string>() { "test" };
+            instance = new AnalyzeRequest(text:"hello world", language:"en", correlationId:"1234", scoreThreshold:0.4, entities: entities, returnDecisionProcess: false);
         }
 
         /// <summary>
@@ -60,8 +59,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void AnalyzeRequestInstanceTest()
         {
-            // TODO uncomment below to test "IsInstanceOfType" AnalyzeRequest
-            //Assert.IsInstanceOfType<AnalyzeRequest> (instance, "variable 'instance' is a AnalyzeRequest");
+            Assert.IsInstanceOfType(typeof(AnalyzeRequest), instance, "variable 'instance' is a AnalyzeRequest");
         }
 
 
@@ -71,7 +69,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void TextTest()
         {
-            // TODO unit test for the property 'Text'
+            Assert.IsTrue(instance.Text == "hello world");
         }
         /// <summary>
         /// Test the property 'Language'
@@ -79,7 +77,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void LanguageTest()
         {
-            // TODO unit test for the property 'Language'
+            Assert.IsTrue(instance.Language == "en");
         }
         /// <summary>
         /// Test the property 'CorrelationId'
@@ -87,7 +85,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void CorrelationIdTest()
         {
-            // TODO unit test for the property 'CorrelationId'
+            Assert.IsTrue(instance.CorrelationId == "1234");
         }
         /// <summary>
         /// Test the property 'ScoreThreshold'
@@ -95,7 +93,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void ScoreThresholdTest()
         {
-            // TODO unit test for the property 'ScoreThreshold'
+            Assert.IsTrue(instance.ScoreThreshold == 0.4);
         }
         /// <summary>
         /// Test the property 'Entities'
@@ -103,7 +101,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void EntitiesTest()
         {
-            // TODO unit test for the property 'Entities'
+            Assert.IsTrue(instance.Entities.Count.Equals(1));
         }
         /// <summary>
         /// Test the property 'ReturnDecisionProcess'
@@ -111,7 +109,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void ReturnDecisionProcessTest()
         {
-            // TODO unit test for the property 'ReturnDecisionProcess'
+            Assert.IsFalse(instance.ReturnDecisionProcess.Value);
         }
 
     }

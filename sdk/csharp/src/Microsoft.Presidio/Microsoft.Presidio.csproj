@@ -12,7 +12,7 @@ Contact: presidio@microsoft.com
     
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A58EBA02-C01E-4673-B190-4F72B3344AC1}</ProjectGuid>
+    <ProjectGuid>{8A2739A1-915C-4E3E-97A1-D33EA1AE15FF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Microsoft.Presidio</RootNamespace>

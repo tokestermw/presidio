@@ -32,17 +32,18 @@ namespace Microsoft.Presidio.Test
     [TestFixture]
     public class AnonymizeResponseTests
     {
-        // TODO uncomment below to declare an instance variable for AnonymizeResponse
-        //private AnonymizeResponse instance;
-
+        private AnonymizeResponse instance;
+        private List<OperatorEntity> entities;
         /// <summary>
         /// Setup before each test
         /// </summary>
         [SetUp]
         public void Init()
         {
-            // TODO uncomment below to create an instance of AnonymizeResponse
-            //instance = new AnonymizeResponse();
+            var operatorEntity = new OperatorEntity(_operator: "hash", entityType: "PERSON", start: 10, end: 12,
+                text: "hello");
+            entities = new List<OperatorEntity>() { operatorEntity };
+            instance = new AnonymizeResponse(text:"hello world", items: entities);
         }
 
         /// <summary>
@@ -60,8 +61,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void AnonymizeResponseInstanceTest()
         {
-            // TODO uncomment below to test "IsInstanceOfType" AnonymizeResponse
-            //Assert.IsInstanceOfType<AnonymizeResponse> (instance, "variable 'instance' is a AnonymizeResponse");
+            Assert.IsInstanceOfType(typeof(AnonymizeResponse), instance, "variable 'instance' is a AnonymizeResponse");
         }
 
 
@@ -71,7 +71,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void TextTest()
         {
-            // TODO unit test for the property 'Text'
+            Assert.IsTrue(instance.Text == "hello world");
         }
         /// <summary>
         /// Test the property 'Items'
@@ -79,7 +79,7 @@ namespace Microsoft.Presidio.Test
         [Test]
         public void ItemsTest()
         {
-            // TODO unit test for the property 'Items'
+            Assert.IsTrue(instance.Items == entities);
         }
 
     }
