@@ -1,4 +1,4 @@
-# IO.Swagger.Model.OperatorEntity
+# Microsoft.Presidio.Model.OperatorEntity
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# IO.Swagger.Model.DeanonymizeResponse
+# Microsoft.Presidio.Model.DeanonymizeResponse
 ## Properties
 
 Name | Type | Description | Notes

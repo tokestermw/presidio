@@ -1,4 +1,4 @@
-# IO.Swagger - the C# library for the Presidio
+# Microsoft.Presidio - the C# library for the Presidio
 
 Context aware, pluggable and customizable PII anonymization service for text and images.
 
@@ -37,9 +37,9 @@ Run the following command to generate the DLL
 
 Then include the DLL (under the `bin` folder) in the C# project, and use the namespaces:
 ```csharp
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using Microsoft.Presidio.Api;
+using Microsoft.Presidio.Client;
+using Microsoft.Presidio.Model;
 ```
 <a name="packaging"></a>
 ## Packaging
@@ -49,7 +49,7 @@ A `.nuspec` is included with the project. You can follow the Nuget quickstart to
 This `.nuspec` uses placeholders from the `.csproj`, so build the `.csproj` directly:
 
 ```
-nuget pack -Build -OutputDirectory out IO.Swagger.csproj
+nuget pack -Build -OutputDirectory out Microsoft.Presidio.csproj
 ```
 
 Then, publish to a [local feed](https://docs.microsoft.com/en-us/nuget/hosting-packages/local-feeds) or [other host](https://docs.microsoft.com/en-us/nuget/hosting-packages/overview) and consume the new package via Nuget as usual.
@@ -60,9 +60,9 @@ Then, publish to a [local feed](https://docs.microsoft.com/en-us/nuget/hosting-p
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using Microsoft.Presidio.Api;
+using Microsoft.Presidio.Client;
+using Microsoft.Presidio.Model;
 
 namespace Example
 {
@@ -103,7 +103,7 @@ Class | Method | HTTP request | Description
 *AnonymizerApi* | [**AnonymizersGet**](docs/AnonymizerApi.md#anonymizersget) | **GET** /anonymizers | Get supported anonymizers
 *AnonymizerApi* | [**DeanonymizersGet**](docs/AnonymizerApi.md#deanonymizersget) | **GET** /deanonymizers | Get supported deanonymizers
 *AnonymizerApi* | [**HealthGet**](docs/AnonymizerApi.md#healthget) | **GET** /health | Healthcheck
-*DeanonymizerApi* | [**DeanonymizePost**](docs/DeanonymizerApi.md#deanonymizepost) | **POST** /deanonymize | Deanonymize Text
+*DeanonymizeApi* | [**DeanonymizePost**](docs/DeanonymizeApi.md#deanonymizepost) | **POST** /deanonymize | Deanonymize Text
 
 <a name="documentation-for-models"></a>
 ## Documentation for Models

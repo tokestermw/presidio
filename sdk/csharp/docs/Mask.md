@@ -1,4 +1,4 @@
-# IO.Swagger.Model.Mask
+# Microsoft.Presidio.Model.Mask
 ## Properties
 
 Name | Type | Description | Notes

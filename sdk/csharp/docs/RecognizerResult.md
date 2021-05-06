@@ -1,4 +1,4 @@
-# IO.Swagger.Model.RecognizerResult
+# Microsoft.Presidio.Model.RecognizerResult
 ## Properties
 
 Name | Type | Description | Notes

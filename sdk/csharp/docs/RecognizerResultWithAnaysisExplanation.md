@@ -1,4 +1,4 @@
-# IO.Swagger.Model.RecognizerResultWithAnaysisExplanation
+# Microsoft.Presidio.Model.RecognizerResultWithAnaysisExplanation
 ## Properties
 
 Name | Type | Description | Notes

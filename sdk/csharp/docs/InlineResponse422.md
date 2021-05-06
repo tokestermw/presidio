@@ -1,4 +1,4 @@
-# IO.Swagger.Model.InlineResponse422
+# Microsoft.Presidio.Model.InlineResponse422
 ## Properties
 
 Name | Type | Description | Notes

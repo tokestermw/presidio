@@ -1,4 +1,4 @@
-# IO.Swagger.Model.AnalyzeRequest
+# Microsoft.Presidio.Model.AnalyzeRequest
 ## Properties
 
 Name | Type | Description | Notes

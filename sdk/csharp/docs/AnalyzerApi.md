@@ -1,4 +1,4 @@
-# IO.Swagger.Api.AnalyzerApi
+# Microsoft.Presidio.Api.AnalyzerApi
 
 All URIs are relative to */*
 
@@ -21,9 +21,9 @@ Recognizes PII entities in a given text and returns their types, locations and s
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using Microsoft.Presidio.Api;
+using Microsoft.Presidio.Client;
+using Microsoft.Presidio.Model;
 
 namespace Example
 {
@@ -79,9 +79,9 @@ Healthcheck
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using Microsoft.Presidio.Api;
+using Microsoft.Presidio.Client;
+using Microsoft.Presidio.Model;
 
 namespace Example
 {
@@ -135,9 +135,9 @@ Get the available PII recognizers for a given language
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using Microsoft.Presidio.Api;
+using Microsoft.Presidio.Client;
+using Microsoft.Presidio.Model;
 
 namespace Example
 {
@@ -195,9 +195,9 @@ Get the list of PII entities Presidio-Analyzer is capable of detecting
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using Microsoft.Presidio.Api;
+using Microsoft.Presidio.Client;
+using Microsoft.Presidio.Model;
 
 namespace Example
 {

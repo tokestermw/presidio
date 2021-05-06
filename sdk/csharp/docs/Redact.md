@@ -1,4 +1,4 @@
-# IO.Swagger.Model.Redact
+# Microsoft.Presidio.Model.Redact
 ## Properties
 
 Name | Type | Description | Notes

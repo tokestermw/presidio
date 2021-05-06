@@ -1,3 +1,5 @@
+#SDKs have their own gitignore files.
+!sdk/*
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -110,10 +112,6 @@ venv.bak/
 *.dll
 *.so
 *.dylib
-
-# Test binary, build with `go test -c`
-*.test
-!sdk
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out

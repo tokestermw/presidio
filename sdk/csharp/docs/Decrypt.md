@@ -1,4 +1,4 @@
-# IO.Swagger.Model.Decrypt
+# Microsoft.Presidio.Model.Decrypt
 ## Properties
 
 Name | Type | Description | Notes

@@ -1,4 +1,4 @@
-# IO.Swagger.Model.AnalysisExplanation
+# Microsoft.Presidio.Model.AnalysisExplanation
 ## Properties
 
 Name | Type | Description | Notes

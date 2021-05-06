@@ -1,4 +1,4 @@
-# IO.Swagger.Api.AnonymizerApi
+# Microsoft.Presidio.Api.AnonymizerApi
 
 All URIs are relative to */*
 
@@ -19,9 +19,9 @@ Anonymize Text
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using Microsoft.Presidio.Api;
+using Microsoft.Presidio.Client;
+using Microsoft.Presidio.Model;
 
 namespace Example
 {
@@ -77,9 +77,9 @@ Get supported anonymizers
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using Microsoft.Presidio.Api;
+using Microsoft.Presidio.Client;
+using Microsoft.Presidio.Model;
 
 namespace Example
 {
@@ -131,9 +131,9 @@ Get supported deanonymizers
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using Microsoft.Presidio.Api;
+using Microsoft.Presidio.Client;
+using Microsoft.Presidio.Model;
 
 namespace Example
 {
@@ -185,9 +185,9 @@ Healthcheck
 ```csharp
 using System;
 using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
+using Microsoft.Presidio.Api;
+using Microsoft.Presidio.Client;
+using Microsoft.Presidio.Model;
 
 namespace Example
 {

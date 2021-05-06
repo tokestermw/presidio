@@ -1,4 +1,4 @@
-# IO.Swagger.Model.AnonymizeRequest
+# Microsoft.Presidio.Model.AnonymizeRequest
 ## Properties
 
 Name | Type | Description | Notes

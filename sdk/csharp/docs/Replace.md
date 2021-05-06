@@ -1,4 +1,4 @@
-# IO.Swagger.Model.Replace
+# Microsoft.Presidio.Model.Replace
 ## Properties
 
 Name | Type | Description | Notes

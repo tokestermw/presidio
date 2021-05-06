@@ -1,4 +1,4 @@
-# IO.Swagger.Model.Hash
+# Microsoft.Presidio.Model.Hash
 ## Properties
 
 Name | Type | Description | Notes

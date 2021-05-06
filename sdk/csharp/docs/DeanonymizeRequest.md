@@ -1,4 +1,4 @@
-# IO.Swagger.Model.DeanonymizeRequest
+# Microsoft.Presidio.Model.DeanonymizeRequest
 ## Properties
 
 Name | Type | Description | Notes
