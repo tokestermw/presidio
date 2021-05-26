@@ -71,7 +71,7 @@
 - name: Credit Card Number
   entity_type: CREDIT_CARD
   languages: [en, es, fr, de, it, zh-hans, ja, ko, pt-pt, pt-br]
- Identification numbers
+ #Identification numbers
 - name: EU Tax Identification Number (TIN)
   entity_type: IDNUM
   languages: [en, es, fr, de, it, pt-pt]
