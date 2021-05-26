@@ -158,7 +158,7 @@ class TextAnalyticsRecognizer(RemoteRecognizer):
             entity_type=entity_type,
             start=categorized_entity.offset,
             end=categorized_entity.offset + len(categorized_entity.text),
-            score=categorized_entity.confidence_score * 0.5,
+            score=categorized_entity.confidence_score,
             analysis_explanation=TextAnalyticsRecognizer._build_explanation(
                 original_score=categorized_entity.confidence_score,
                 entity_type=entity_type,

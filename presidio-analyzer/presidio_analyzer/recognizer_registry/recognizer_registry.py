@@ -81,7 +81,7 @@ class RecognizerRegistry:
                 IbanRecognizer,
                 IpRecognizer,
                 nlp_recognizer,
-                # TextAnalyticsRecognizer,
+                TextAnalyticsRecognizer,
             ],
         }
         for lang in languages:
