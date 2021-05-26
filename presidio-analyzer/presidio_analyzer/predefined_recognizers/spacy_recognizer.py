@@ -26,7 +26,10 @@ class SpacyRecognizer(LocalRecognizer):
     is translated into a Presidio entity.
     """
 
-    ENTITIES = ["DATE_TIME", "NRP", "LOCATION", "PERSON"]
+    ENTITIES = ["DATE_TIME", "NRP", "LOCATION", "PERSON",
+                "ORGANIZATION", # - Less accurate with the 'en_core_web_lg' model,
+                # can be used with more assurance when using 'en_core_web_trf'.
+                ]
 
     DEFAULT_EXPLANATION = "Identified as {} by Spacy's Named Entity Recognition"
 
@@ -35,14 +38,15 @@ class SpacyRecognizer(LocalRecognizer):
         ({"PERSON", "PER"}, {"PERSON", "PER"}),
         ({"DATE_TIME"}, {"DATE", "TIME"}),
         ({"NRP"}, {"NORP"}),
+        ({"ORGANIZATION"}, {"ORG"}),
     ]
 
     def __init__(
-        self,
-        supported_language: str = "en",
-        supported_entities: Optional[List[str]] = None,
-        ner_strength: float = 0.85,
-        check_label_groups: Optional[Tuple[Set, Set]] = None,
+            self,
+            supported_language: str = "en",
+            supported_entities: Optional[List[str]] = None,
+            ner_strength: float = 0.85,
+            check_label_groups: Optional[Tuple[Set, Set]] = None,
     ):
         self.ner_strength = ner_strength
         self.check_label_groups = (
@@ -59,7 +63,7 @@ class SpacyRecognizer(LocalRecognizer):
         pass
 
     def build_spacy_explanation(
-        self, original_score: float, explanation: str
+            self, original_score: float, explanation: str
     ) -> AnalysisExplanation:
         """
         Create explanation for why this result was detected.
@@ -102,7 +106,7 @@ class SpacyRecognizer(LocalRecognizer):
 
     @staticmethod
     def __check_label(
-        entity: str, label: str, check_label_groups: Tuple[Set, Set]
+            entity: str, label: str, check_label_groups: Tuple[Set, Set]
     ) -> bool:
         return any(
             [entity in egrp and label in lgrp for egrp, lgrp in check_label_groups]

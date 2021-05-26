@@ -30,7 +30,7 @@ class SpacyNlpEngine(NlpEngine):
         For example: models = {"en": "en_core_web_lg"}
         """
         if not models:
-            models = {"en": "en_core_web_lg"}
+            models = {"en": "en_core_web_trf"}
         logger.debug(f"Loading SpaCy models: {models.values()}")
 
         self.nlp = {

@@ -1,0 +1,4 @@
+from presidio_analyzer.predefined_recognizers import TextAnalyticsRecognizer
+
+TextAnalyticsRecognizer().get_supported_entities()
+pass

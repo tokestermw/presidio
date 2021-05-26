@@ -88,7 +88,7 @@ class TextAnalyticsRecognizer(RemoteRecognizer):
         :return: List of the supported entities matching the Text Analytics categories'
          languages.
         """
-        return (
+        return list(set(
             [
                 category.entity_type
                 for category in self.text_analytics_categories
@@ -96,7 +96,7 @@ class TextAnalyticsRecognizer(RemoteRecognizer):
             ]
             if self.enabled
             else []
-        )
+        ))
 
     def analyze(
         self, text: str, entities: List[str], nlp_artifacts: NlpArtifacts = None
@@ -111,27 +111,41 @@ class TextAnalyticsRecognizer(RemoteRecognizer):
             Text Analytics detections.
         """
         if self.enabled:
-            result = self.text_analytics_client.recognize_pii_entities(
+            with open('/tmp/sample.txt', 'a') as file_object:
+                file_object.write(str(len(text)) + "\n")
+            if len(text) > 5120:
+                text = text[0:5119]
+
+            text_analytics_results = self.text_analytics_client.recognize_pii_entities(
                 [text], language="en"
             )
             category_names = [
-                category.name for category in self.text_analytics_categories
+                category.name.lower() for category in self.text_analytics_categories
             ]
-            return [
-                self._convert_to_recognizer_result(categorized_entity)
-                for categorized_entity in result[0].entities
-                if categorized_entity.category in category_names
-            ]
+            converted_results = []
+            for categorized_entity in text_analytics_results[0].entities:
+                if categorized_entity.category.lower() in category_names:
+                    converted_results += [self._convert_to_recognizer_result(categorized_entity)]
+                else:
+                    with open('/tmp/misssing.txt', 'a') as file_object:
+                        file_object.write(str(categorized_entity.category) + "-" + str(categorized_entity.subcategory) + "\n")
+
+            # converted_results = [self._convert_to_recognizer_result(categorized_entity) for categorized_entity in
+            #         text_analytics_results[0].entities if categorized_entity.category.lower() in category_names]
+            return converted_results
 
     def _convert_to_recognizer_result(self, categorized_entity):
         if categorized_entity.subcategory:
-            entity_type = next(
-                filter(
-                    lambda x: categorized_entity.subcategory == x.subcategory
-                    and categorized_entity.category == x.name,
-                    self.text_analytics_categories,
-                )
-            ).entity_type
+            try:
+                entity_type = next(
+                    filter(
+                        lambda x: categorized_entity.subcategory == x.subcategory
+                        and categorized_entity.category.lower() == x.name.lower(),
+                        self.text_analytics_categories,
+                    )
+                ).entity_type
+            except Exception:
+                entity_type = "UNDEFINED"
         else:
             entity_type = next(
                 filter(
@@ -144,7 +158,7 @@ class TextAnalyticsRecognizer(RemoteRecognizer):
             entity_type=entity_type,
             start=categorized_entity.offset,
             end=categorized_entity.offset + len(categorized_entity.text),
-            score=categorized_entity.confidence_score,
+            score=categorized_entity.confidence_score * 0.5,
             analysis_explanation=TextAnalyticsRecognizer._build_explanation(
                 original_score=categorized_entity.confidence_score,
                 entity_type=entity_type,
