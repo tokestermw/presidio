@@ -28,8 +28,8 @@ steps:
     inputs:
         action: Push services
         dockerComposeFile: ${{ parameters.DOCKER_COMPOSE_FILE }}  
-        containerregistrytype: Container Registry
-        azureSubscriptionEndpoint: ${{ parameters.AZURE_SUBSCRIPTION }}
+        containerregistrytype: Azure Container Registry
+        azureSubscriptionEndpoint: presidio-acr
         azureContainerRegistry: ${{ parameters.REGISTRY_NAME }}
         dockerComposeFileArgs: |
           REGISTRY_NAME=${{ parameters.REGISTRY_NAME }}
