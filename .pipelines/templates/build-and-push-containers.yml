@@ -28,7 +28,7 @@ steps:
     inputs:
         action: Push services
         dockerComposeFile: ${{ parameters.DOCKER_COMPOSE_FILE }}  
-        containerregistrytype: Azure Container Registry
+        containerregistrytype: Container Registry
         azureSubscriptionEndpoint: ${{ parameters.AZURE_SUBSCRIPTION }}
         azureContainerRegistry: ${{ parameters.REGISTRY_NAME }}
         dockerComposeFileArgs: |
