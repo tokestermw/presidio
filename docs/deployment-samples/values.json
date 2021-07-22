@@ -18,7 +18,7 @@
             "value": "presidio"
         },
         "dockerRegistryPassword": {
-            "value": "zWxOp+4Zqni2EI5vNTcCGhK+kBZj0Gio"
+            "value": "PLACEHOLDER"
         },
         "newOrExistingAppServicePlan": {
             "value": "existing"
